@@ -11,26 +11,39 @@ body {
 }
 
 header {
-    padding: 20px auto;
+    padding: 25px 25px 0 25px;
     align-items: center;
     text-align: center;
+    position: sticky;
+    top: 0px;
+    background-color: #121217;
+    
 }
 
 nav {
-    position: sticky;
-    top: 0px;
-    padding: 25px;
     text-align: center;
-    border-bottom: 0.5px solid #fff;
-    background-color: #121217;
     overflow: hidden;
+    border-bottom: 0.5px solid #fff;
 }
 
 nav a {
-    padding: 20px 20px;
+    display: inline-block;
 }
 
-/* Specific divs */
-#header-title {
-    padding: 20px 20px;
+h1 {
+    font-size: 20px;
+    font-weight: 100;
+}
+
+h2 {
+    text-align: center;
+}
+
+/* Specific selectors */
+#work {
+    float: left;
+}
+
+#about {
+    float: right;
 }
