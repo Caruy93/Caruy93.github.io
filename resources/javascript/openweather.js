@@ -18,3 +18,16 @@ const getForecast = async() => {
 
     } catch(error) {console.log(error);}
 }
+
+// Render forecast text
+const renderForecast = (day) => {
+    let weatherContent = createWeatherHTML(day)
+}
+
+// Execute weather update
+const executeUpdate = () => {
+    getForecast().then(forecast => renderForecast(forecast))
+    return false;
+}
+
+executeUpdate();
