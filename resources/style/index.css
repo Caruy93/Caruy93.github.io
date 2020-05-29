@@ -30,7 +30,6 @@ body {
     letter-spacing: 0.05rem;
     text-align: center;
     height:100%;
-    border: solid white;
 }
 
 /* Specific selectors */
@@ -40,9 +39,11 @@ body {
    top: 50%;
    left: 50%;
    transform: translate(-50%, -50%);
+   width: 49%;
 }
 
 
 h2 {
     font-weight: 300;
+    font-size: 25px;
 }
