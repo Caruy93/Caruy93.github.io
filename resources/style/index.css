@@ -1,6 +1,26 @@
 html {
     margin: 0;
     padding: 0;
+    height: 100%;
+}
+
+header {
+    position: sticky;
+    top: 0px;
+    padding: 10px 20px;
+    text-align: center;
+    border-bottom: 1px solid #fff;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    font-size: 20px;
+    font-weight: 600;
 }
 
 body {
@@ -8,42 +28,21 @@ body {
     color: #fff;
     background-color: #121217;
     letter-spacing: 0.05rem;
-}
-
-header {
-    padding: 25px 25px 0 25px;
-    align-items: center;
     text-align: center;
-    position: sticky;
-    top: 0px;
-    background-color: #121217;
-    
-}
-
-nav {
-    text-align: center;
-    overflow: hidden;
-    border-bottom: 0.5px solid #fff;
-}
-
-nav a {
-    display: inline-block;
-}
-
-h1 {
-    font-size: 20px;
-    font-weight: 100;
-}
-
-h2 {
-    text-align: center;
+    height:100%;
+    border: solid white;
 }
 
 /* Specific selectors */
-#work {
-    float: left;
+
+.centered {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
 }
 
-#about {
-    float: right;
+
+h2 {
+    font-weight: 300;
 }
