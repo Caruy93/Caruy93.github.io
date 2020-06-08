@@ -17,7 +17,6 @@ const getForecast = async() => {
 
         if (response.ok) {
             const jsonResponse = await response.json();
-
             return jsonResponse;
         }
 

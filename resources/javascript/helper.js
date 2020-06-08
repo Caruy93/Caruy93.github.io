@@ -11,6 +11,8 @@ const weatherObj = {
         text: 'cloudy', emoji: [0x2601, 0xFE0F]},
     'shower rain': {
         text: 'rainy', emoji: [0x1F327, 0xFE0F]},
+    'light rain': {
+        text: 'rainy', emoji: [0x1F326, 0xFE0F]},
     'rain': {
         text: 'rainy', emoji: [0x1F326, 0xFE0F]},
     'thunderstorm': {
@@ -26,7 +28,6 @@ const tempToText = (currentDay) => {
 }
 
 const simpleWeather = (currDescription) => {
-
     return weatherObj[currDescription].text;
 
 }
