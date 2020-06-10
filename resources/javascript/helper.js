@@ -44,9 +44,6 @@ const weatherObj = {
     'Mist': {text: 'misty', emoji: [0x1F32B, 0xFE0F]}
 }
 
-//import { weatherObj } from "./weatherobj.js";
-//weatherObj = import("./weatherobj");
-
 const tempToText = (currentDay) => {
     return currentDay.main.temp < 289.15 ? 'cold' : 'warm';
 }
