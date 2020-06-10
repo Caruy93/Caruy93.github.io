@@ -1,5 +1,5 @@
 // Create weather object that maps the json description to a simplified text and emoji
-/*const weatherObj = {
+const weatherObj = {
 
     'Clear': {
         'clear sky' : {
@@ -20,22 +20,33 @@
             text: 'rainy', emoji: [0x1F326, 0xFE0F]},
         'moderate rain': {
             text: 'rainy', emoji: [0x1F326, 0xFE0F]},
+        'heavy intensity rain' : {
+            text: 'rainy', emoji: [0x1F326, 0xFE0F]},
+        'very heavy rain' : {
+            text: 'rainy', emoji: [0x1F326, 0xFE0F]},
+        'extreme rain': {
+            text: 'rainy', emoji: [0x1F326, 0xFE0F]},
+        'light intensity shower rain': {
+            text: 'rainy', emoji: [0x1F327, 0xFE0F]},
         'shower rain': {
             text: 'rainy', emoji: [0x1F327, 0xFE0F]},
-        'rain': {
-            text: 'rainy', emoji: [0x1F326, 0xFE0F]},
-        'thunderstorm': {
-            text: 'stormy', emoji: [0x26C8, 0xFE0F]},
+        'heavy intensity shower rain': {
+            text: 'rainy', emoji: [0x1F327, 0xFE0F]},
+        'ragged shower rain': {
+            text: 'rainy', emoji: [0x1F327, 0xFE0F]},
+        'freezing rain': {
+            text: 'rainy', emoji: [0x1F327, 0xFE0F]},
+
     },
-    
-    'snow': {
-        text: 'snowy', emoji: [0x2603, 0xFE0F]},
-    'mist': {
-        text: 'misty', emoji: [0x1F32B, 0xFE0F]}
+    'Thunderstorm': {text: 'stormy', emoji: [0x26C8, 0xFE0F]},
+    'Drizzle': {text: 'drizzly', emoji: [0x1F326, 0xFE0F]},
+    'Snow': {text: 'snowy', emoji: [0x2603, 0xFE0F]},
+    'Mist': {text: 'misty', emoji: [0x1F32B, 0xFE0F]}
 }
-*/
+
 //import { weatherObj } from "./weatherobj.js";
-weatherObj = import("./weatherobj");
+//weatherObj = import("./weatherobj");
+
 const tempToText = (currentDay) => {
     return currentDay.main.temp < 289.15 ? 'cold' : 'warm';
 }
@@ -43,7 +54,12 @@ const tempToText = (currentDay) => {
 const simpleWeather = (currWeather) => {
     const main = currWeather.main;
     const description = currWeather.description;
-    return weatherObj[main][description].text;
+    const mainObj = weatherObj[main];
+    
+    return mainObj[description]? 
+        mainObj[description].text:
+        mainObj.text;
+
 
 }
 
@@ -62,7 +78,11 @@ const createWeatherEmoji = (currentDay) => {
 
     const weatherMain = currentDay.weather[0].main;
     const weatherDescription = currentDay.weather[0].description;
-    const currWeatherObj = weatherObj[weatherMain][weatherDescription];
+
+    // Captures scenarios when object does not have details
+    const currWeatherObj = weatherObj[weatherMain][weatherDescription]?
+        weatherObj[weatherMain][weatherDescription]:
+        weatherObj[weatherMain];
 
     // Clear sky weather and warm shows "sunglass emoji" instead of sun (shown when cold)
     if (weatherDescription === 'clear sky') {

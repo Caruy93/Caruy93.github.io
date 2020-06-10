@@ -2,8 +2,6 @@
 const openWeatherKey = '1eb909d1a2afc9bf25c25ffd2b76fffe';
 const openWeatherUrl = 'https://api.openweathermap.org/data/2.5/weather';
 
-// Access inline weather text
-const weatherElement = document.getElementById('weather-update');
 // Self intro paragraph
 const selfIntroHTML = document.getElementById('self-introduction');
 
@@ -18,33 +16,62 @@ const getForecast = async() => {
         if (response.ok) {
             const jsonResponse = await response.json();
             return jsonResponse;
+        } else {
+            throw new Error(response);
         }
 
-    } catch(error) {console.log(error);}
+    } catch(error) {
+        console.log(error);
+        // Continue to provide some placeholder weather update
+        return {
+            "weather": [
+                {
+                    "main": "Clear",
+                    "description": "clear sky"
+                }
+            ],
+            "main": {
+                "temp": "290"
+            }
+        }
+  
+
+    }
 }
 
 // Render forecast text
-const renderForecast = (day) => {
-    let weatherContent = createWeatherHTML(day)
+const renderForecast = (forecast) => {
+    const weatherContent = createWeatherHTML(forecast)
     return weatherContent;
 }
 
 // Render weather emoji
-const renderEmoji = (day) => {
-    let weatherEmoji = createWeatherEmoji(day)
+const renderEmoji = (forecast) => {
+    const weatherEmoji = createWeatherEmoji(forecast)
     return weatherEmoji;
 }
 
 // Execute weather update and determine emoji
 const executeUpdate = async() => {
 
-    const weatherUpdate = await getForecast().then(forecast => renderForecast(forecast));
-    const weatherEmoji = await getForecast().then(forecast => renderEmoji(forecast));
+    const weatherUpdate = await getForecast()
+        .then(forecast => renderForecast(forecast))
+        .catch(e => {
+            // In case of uncaptured weather condition, default to warm and sunny
+            console.log(e);
+            return 'warm and sunny';
+        });
+    const weatherEmoji = await getForecast()
+        .then(forecast => renderEmoji(forecast))
+        .catch(e => {
+            // in case of uncaptured weather condition, default to sunglasses
+            console.log(e);
+            return String.fromCodePoint(0x1F60E);
+        });
 
-    weatherElement.innerHTML = weatherUpdate;
-    selfIntroHTML.innerHTML += ` ${weatherEmoji}`;
+    selfIntroHTML.innerHTML = `a tinker, thinker, making things <br />
+        in ${weatherUpdate} Helsinki. ${weatherEmoji}`;
 
-    return false;
 }
 
 executeUpdate();
