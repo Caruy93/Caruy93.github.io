@@ -1,5 +1,5 @@
 // Create weather object that maps the json description to a simplified text and emoji
-const weatherObj = {
+/*const weatherObj = {
 
     'Clear': {
         'clear sky' : {
@@ -33,7 +33,9 @@ const weatherObj = {
     'mist': {
         text: 'misty', emoji: [0x1F32B, 0xFE0F]}
 }
-
+*/
+//import { weatherObj } from "./weatherobj.js";
+weatherObj = import("./weatherobj");
 const tempToText = (currentDay) => {
     return currentDay.main.temp < 289.15 ? 'cold' : 'warm';
 }
@@ -75,3 +77,4 @@ const createWeatherEmoji = (currentDay) => {
     }
 
 }
+
