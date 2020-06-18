@@ -52,22 +52,3 @@ h2 {
     font-size: 30px;
     line-height: 2.5rem;
 }
-
-/* Social media icon selectors*/
-.social-media-list {
-    list-style: none;
-}
-.social-media-list li {
-    display: inline-block;
-    margin-right: 1em;
-    font-size: 180%;
-}
-
-.social-media-list li a {
-    color: #888;
-    transition: color 0.5s;
-}
-
-.social-media-list li a:hover {
-    color: #3b5998
-}

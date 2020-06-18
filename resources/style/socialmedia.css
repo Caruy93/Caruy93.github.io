@@ -1,0 +1,38 @@
+
+/* Social media icon selectors*/
+.social-media-list {
+    list-style: none;
+}
+.social-media-list li {
+    display: inline-block;
+    margin-right: 1em;
+    font-size: 180%;
+}
+
+.social-media-list li a {
+    color: #888;
+    transition: color 0.5s;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    height: 30px;
+    width: 30px;
+}
+
+.social-media-list li .linkedin-logo:hover {
+    color: #3b5998
+}
+
+.social-media-list li .github-logo:hover {
+    color: #000
+}
+
+.social-media-list li .instagram-logo {
+    border-radius: 30%;
+}
+
+.social-media-list li .instagram-logo:hover {
+    color: #fff;;
+    background: #d6249f;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+}
