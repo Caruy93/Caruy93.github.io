@@ -2,37 +2,39 @@
 /* Social media icon selectors*/
 .social-media-list {
     list-style: none;
+    margin: 0;
 }
+
 .social-media-list li {
-    display: inline-block;
-    margin-right: 1em;
-    font-size: 180%;
+    font-size: 150%;
+    margin: 25px auto;
+    transition: all 0.25s;
+    transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .social-media-list li a {
     color: #888;
-    transition: color 0.5s;
-    display: inline-block;
     text-align: center;
-    vertical-align: middle;
     height: 30px;
     width: 30px;
+    transition: all 0.25s;
+    transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-.social-media-list li .linkedin-logo:hover {
-    color: #3b5998
+.social-media-list li:hover {
+    transform: translateY(-3px);
 }
 
-.social-media-list li .github-logo:hover {
-    color: #000
+.social-media-list li a:hover {
+    color: #4B78D2;
 }
 
-.social-media-list li .instagram-logo {
-    border-radius: 30%;
-}
-
-.social-media-list li .instagram-logo:hover {
-    color: #fff;;
-    background: #d6249f;
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+.social-media-list::after {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 100px;
+    margin: 0 auto;
+    background-color: #888;
+    bottom: 0;
 }
