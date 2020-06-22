@@ -3,7 +3,7 @@ const openWeatherKey = '1eb909d1a2afc9bf25c25ffd2b76fffe';
 const openWeatherUrl = 'https://api.openweathermap.org/data/2.5/weather';
 
 // Self intro paragraph
-const selfIntroHTML = document.getElementById('self-introduction');
+const selfIntroHTML = document.getElementById('self-intro-body');
 
 // Fetch weather information
 const getForecast = async() => {
@@ -69,8 +69,8 @@ const executeUpdate = async() => {
             return String.fromCodePoint(0x1F60E);
         });
 
-    selfIntroHTML.innerHTML = `a tinker, thinker, making things <br />
-        in ${weatherUpdate} Helsinki. ${weatherEmoji}`;
+    selfIntroHTML.innerHTML = `a developer based in ${weatherUpdate} Helsinki ${weatherEmoji}. I focus 
+        on building great websites and applications.`;
 
 }
 
