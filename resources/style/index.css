@@ -7,6 +7,24 @@ html, body {
     font-family: 'Raleway', sans-serif;
 }
 
+body {
+    color: #57391e;
+    background-color: #fbf7ef;
+    letter-spacing: 0.05rem;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+main section {
+    flex-basis: 100vh;
+    overflow: auto;
+}
+
 header {
     position: absolute;
     top: 0px;
@@ -32,32 +50,7 @@ footer {
     bottom: 0;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #57391e;
-    background-color: #fbf7ef;
-    letter-spacing: 0.05rem;
-}
-
-main {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-}
-
-main section {
-    flex-basis: 100vh;
-    overflow: auto;
-}
-
-
-.about {
-    width: 100%;
-    background-color: #F1E3C6;
-}
-
-.self-intro-wrapper {
+.intro-content-wrapper {
     position: relative;
     top: 150px;
     left: 175px;
@@ -77,3 +70,68 @@ h2 {
     font-weight: 200;
     line-height: 4rem;
 }
+
+.email-link {
+    cursor: pointer;
+    position: relative;
+    top: 40px;
+    padding: 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 200;
+    font-size: 0.8em;
+    color: #57391e;
+    background-color: #F1E3C6;
+    transition: 0.25s;
+}
+
+.email-link:hover {
+    color: #fbf7ef;
+    background-color: #9DB5E7;
+}
+
+.about-section {
+    width: 100%;
+}
+
+.about-image-wrapper {
+    display: inline-block;
+    position: relative;
+    top: 0;
+    left: 150px;
+}
+
+.about-image-wrapper img {
+    width: 350px;
+}
+
+.about-content-wrapper {
+    display: inline-block;
+    position: relative;
+    top: 100px;
+    left: 200px;
+    width: 750px;
+    line-height: 1.75em;
+    font-size: 1em;
+    background-color: #F1E3C6;
+    padding: 20px;
+}
+
+.about-content-wrapper h2 {
+    color: #880e17;
+    font-weight: 300;
+    font-size: 2.5em;
+    line-height: 0;
+    padding-bottom: 20px;
+}
+
+.about-content-wrapper ul {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+}
+
+.about-content-wrapper p {
+    font-weight: 400;
+}
+

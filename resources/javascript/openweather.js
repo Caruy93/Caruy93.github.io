@@ -69,7 +69,7 @@ const executeUpdate = async() => {
             return String.fromCodePoint(0x1F60E);
         });
 
-    selfIntroHTML.innerHTML = `a developer based in ${weatherUpdate} Helsinki ${weatherEmoji}, building great websites and applications.`;
+    selfIntroHTML.innerHTML = `a developer in ${weatherUpdate} Helsinki ${weatherEmoji}, building great websites and applications.`;
 
 }
 
