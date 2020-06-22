@@ -45,6 +45,10 @@ ol.horizontal-list li {
     margin: 0px 30px;
 }
 
+a {
+    text-decoration: none;
+}
+
 footer {
     position: fixed;
     bottom: 0;
