@@ -112,20 +112,23 @@ h1 {
 }
 
 .about-section {
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     align-content: center;
-    flex-wrap: wrap;
-    width: 90em;
+    max-width: 90em;
 }
 
-.about-image img {
-    width: 300px;
+.about-image {
+    flex: 1;
+    margin-right: 2em;
+    max-width: 350px;
     border-radius: 100%;
 }
 
 .about-text {
-    max-width: 60em;
+    flex: 1;
+    margin-left: 2em;
     line-height: 1.5rem;
     background-color: #F1E3C6;
     padding: 0 20px 10px;
@@ -136,8 +139,17 @@ h1 {
     color: #880e17;
     font-weight: 400;
     font-size: 2.5em;
-    line-height: 0;
-    padding: 1em 0;
+    line-height: 2;
+    display: flex;
+    align-items: center;
+}
+
+.about-text h2::after {
+    content: '';
+    flex: 1;
+    height: 2px;
+    margin: auto 10px;
+    background-color: #aaa;
 }
 
 .about-text p {
@@ -154,7 +166,7 @@ h1 {
 
 
 /* Breakpoint into standard screen size */
-@media only screen and (max-width: 110em) {
+@media only screen and (max-width: 100em) {
     main {
         padding-top: 0;
         padding-bottom: 0;
@@ -165,12 +177,17 @@ h1 {
     }
 
     .about-section {
-        width: 70em;
+        max-width: 70em;
     }
 
-    .about-image img {
-        width: 300px;
+    .about-image {
+        margin-right: 1em;
     }
+
+    .about-text {
+        margin-left: 1em;
+    }
+
 }
 
 /* Breakpoint into tablet screen size */
@@ -184,20 +201,31 @@ h1 {
     }
     .intro-section {
         font-size: 0.8rem;
-        
+    }
+
+    .about-section {
+        flex-direction: column-reverse;
+        justify-content: center;
+        margin: 150px auto;
+        padding: 0;
+        background-color: #F1E3C6;
+        border-radius: 10px;
     }
 
     .about-image img {
         width: 250px;
+        margin: 0;
     }
 
-    
+    .about-text {
+        margin: 0;
+    }
 }
 
 /* Breakpoint into smartphone screen size */
 @media only screen and (max-width: 43em) {
     main {
-        padding: 0 50px;
+        padding: 0 30px;
     }
 
     .intro-section {
@@ -206,5 +234,9 @@ h1 {
 
     .intro-section h2 {
         padding: 25px 0;
+    }
+
+    .about-image {
+        width: 200px;
     }
 }
