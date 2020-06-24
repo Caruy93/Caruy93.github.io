@@ -1,22 +1,21 @@
+html {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+* {
+    box-sizing: inherit;
+}
 
 body {
     font-family: 'Raleway', sans-serif;
     color: #57391e;
     background-color: #fbf7ef;
     letter-spacing: 0.05rem;
-}
-
-main {
+    position: relative;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-}
-
-main section {
-    flex: 1 100vh;
-    overflow: auto;
-    height: 100vh;
+    min-height: 100%;
+    overflow-x: hidden;
 }
 
 header {
@@ -52,44 +51,52 @@ ol.horizontal-list li a:hover {
     color: #4774d2;
 }
 
-footer {
-    position: fixed;
-    bottom: 0;
-    left: 40px;
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 200px 150px;
+    width: 100%;
 }
 
-.intro-content-wrapper {
-    position: relative;
-    top: 20%;
-    left: 12%;
-    width: 750px;
+main section {
+    overflow: hidden;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 150px 0;
+    max-width: 60em;
+}
+
+.intro-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 h1 {
     font-weight: 200;
-    font-size: 3rem;
+    font-size: 3em;
 }
 
 .name {
     font-weight: 600;
 }
 
-.intro-content-wrapper h2 {
+.intro-section h2 {
     font-weight: 200;
-    line-height: 4rem;
-    font-size: 2.75rem;
+    line-height: 1.5em;
+    font-size: 2.75em;
     padding: 50px 0;
 }
 
 .email-link {
     cursor: pointer;
-    position: relative;
-    top: 40px;
     padding: 20px;
     border-radius: 5px;
     text-decoration: none;
     font-weight: 200;
-    font-size: 0.8em;
+    font-size: 1.5em;
     color: #57391e;
     background-color: #F1E3C6;
     transition: 0.25s;
@@ -168,25 +175,46 @@ h1 {
 }
 
 
-@media only screen and (max-width: 850px) {
-    .intro-content-wrapper {
-        width: 500px;
+/* Breakpoint into standard screen size */
+@media only screen and (max-width: 110em) {
+    main {
+        padding-top: 0;
+        padding-bottom: 0;
     }
+
+    .intro-section {
+        justify-content: center;
+    }
+}
+
+/* Breakpoint into tablet screen size */
+@media only screen and (max-width: 62em) {
+    main {
+        padding: 0 100px;
+    }
+
+    main section{
+        padding: 100px 0;
+    }
+    .intro-section {
+        font-size: 0.8rem;
+        
+    }
+
     
 }
 
-@media only screen and (max-width: 450px) {
-    .intro-content-wrapper {
-        width: 350px;
-        left: 12%;
-    }
-    h1 {
-        font-size: 2rem;
+/* Breakpoint into smartphone screen size */
+@media only screen and (max-width: 43em) {
+    main {
+        padding: 0 50px;
     }
 
-    .intro-content-wrapper h2 {
-        font-weight: 200;
-        line-height: 4rem;
-        font-size: 1.5em;
+    .intro-section {
+        font-size: 0.6rem;
+    }
+
+    .intro-section h2 {
+        padding: 25px 0;
     }
 }
