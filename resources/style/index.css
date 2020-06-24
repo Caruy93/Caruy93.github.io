@@ -64,14 +64,18 @@ main section {
     min-height: 100vh;
     margin: 0 auto;
     padding: 150px 0;
-    max-width: 60em;
+}
+
+.flex-container {
+    display: flex;
 }
 
 .intro-section{
-    display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    max-width: 65em;
+    
 }
 
 h1 {
@@ -108,63 +112,37 @@ h1 {
 }
 
 .about-section {
-    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 90em;
 }
 
-.about-title {
-    position: relative;
-    text-align: center;
+.about-image img {
+    width: 300px;
+    border-radius: 100%;
+}
+
+.about-text {
+    max-width: 60em;
+    line-height: 1.5rem;
+    background-color: #F1E3C6;
+    padding: 0 20px 10px;
+    border-radius: 10px;
+}
+
+.about-text h2 {
     color: #880e17;
     font-weight: 400;
     font-size: 2.5em;
     line-height: 0;
-    padding: 70px 0px;
-    top: 110px;
-    left: 270px;
+    padding: 1em 0;
 }
-
-.about-title::after {
-    content: "";
-    display: inline-block;
-    width: 450px;
-    height: 1px;
-    background-color: #aaa;
-    vertical-align: middle;
-    margin: 0 20px;
-}
-
-.about-flex-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: space-around;
-    flex-wrap: wrap;
-}
-
-.about-image {
-    padding: 50px 100px 0 80px;
-}
-
-.about-image img {
-    width: 350px;
-    border-radius: 100%;
-
-    color: #888;
-}
-
-.about-text {
-    width: 680px;
-    line-height: 1.75em;
-    font-size: 1em;
-    background-color: #F1E3C6;
-    padding: 70px 20px 5px;
-    border-radius: 10px;
-}
-
 
 .about-text p {
     font-weight: 400;
-    padding: 5px 0;
+    padding: 0 0 1em;
 }
 
 .about-text ul {
@@ -185,6 +163,14 @@ h1 {
     .intro-section {
         justify-content: center;
     }
+
+    .about-section {
+        width: 70em;
+    }
+
+    .about-image img {
+        width: 300px;
+    }
 }
 
 /* Breakpoint into tablet screen size */
@@ -199,6 +185,10 @@ h1 {
     .intro-section {
         font-size: 0.8rem;
         
+    }
+
+    .about-image img {
+        width: 250px;
     }
 
     
