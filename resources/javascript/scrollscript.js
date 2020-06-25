@@ -1,4 +1,32 @@
 
+$(document).scroll(function () {
+    $('section').each(function () {
+        if($(this).position().top <= $(document).scrollTop() && ($(this).position().top + $(this).outerHeight()) > $(document).scrollTop()) {
+            console.log($(this).attr('id'));
+        }
+    });
+});
+function getNext() {
+    var elmt = document.getElementById("About");
+    elmt.scrollIntoView();
+}
+/*
+let sectionsObjectArray = [
+    {sectionId: 1, sectionName: "#Introduction"},
+    {sectionId: 2, sectionName: "#About"},
+    {sectionId: 3, sectionName: "#Contact"}
+];
+
+let currentSection = 0;
+
+function getNext() {
+    currentSection++;
+    console.log(sectionsObjectArray[currentSection].sectionName);
+    return sectionsObjectArray[currentSection].sectionName;
+}
+*/
+
+/*-------------------------*/
 // Capture element height of ID: About
 let divElement = document.getElementById('About');
 let strHeight = document.defaultView.getComputedStyle(divElement).height;
@@ -15,7 +43,7 @@ const aboutBeforeRule = `.about-section::before {height: ${spacer(height)}px}`;
 document.styleSheets[1].insertRule(aboutRule);
 document.styleSheets[1].insertRule(aboutBeforeRule);
 
-
+/*-------------------------*/
 // Allow smooth scrolling when document is ready
 $(document).ready(function() {
 
