@@ -208,7 +208,7 @@ footer {
         padding: 0 100px;
     }
 
-    .intro-section {
+    section {
         font-size: 0.8rem;
     }
 
@@ -234,6 +234,8 @@ footer {
         background-color: transparent;
         padding: 0 20px;
     }
+
+  
 }
 
 /* Breakpoint into smartphone screen size */
@@ -252,6 +254,10 @@ footer {
 
     .about-image {
         width: 200px;
+    }
+
+    .contact-section {
+        text-align: center;
     }
 
 }
