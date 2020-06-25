@@ -71,8 +71,8 @@
 
 /* Arrow elements */
 .arrow {
-    width: 3vmin;
-    height: 3vmin;
+    width: 3.2vmin;
+    height: 3.2vmin;
     transform: rotate(-45deg);
 }
 
