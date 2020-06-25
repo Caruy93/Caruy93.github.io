@@ -28,34 +28,6 @@ header {
     z-index: 1;
 }
 
-ol.horizontal-list {
-    list-style-type: decimal-leading-zero;
-    right: 150px;
-}
-
-ol.horizontal-list li {
-    float: left;
-    width: 50px;
-    margin: 0px 30px;
-    color: #4774d2;
-}
-
-h1 {
-    font-weight: 200;
-    font-size: 3em;
-}
-
-a {
-    text-decoration: none;
-    color: #57391e;
-    transition: color 0.25s;
-    transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-a:hover {
-    color: #4774d2;
-}
-
 main {
     display: flex;
     flex-direction: column;
@@ -67,7 +39,49 @@ main {
 main section {
     overflow: hidden;
     margin: 0 auto;
-    
+}
+
+h1 {
+    font-weight: 200;
+    font-size: 3em;
+}
+
+h2 {
+    font-weight: 200;
+    line-height: 1.5em;
+    font-size: 2.75em;
+    padding: 50px 0;
+}
+
+h3 {
+    color: #880e17;
+    font-weight: 400;
+    font-size: 2.5em;
+    line-height: 2;
+    display: flex;
+    align-items: center;
+}
+a {
+    text-decoration: none;
+    color: #57391e;
+    transition: color 0.25s;
+    transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+a:hover {
+    color: #4774d2;
+}
+
+ol.horizontal-list {
+    list-style-type: decimal-leading-zero;
+    right: 150px;
+}
+
+ol.horizontal-list li {
+    float: left;
+    width: 50px;
+    margin: 0px 30px;
+    color: #4774d2;
 }
 
 .flex-container {
@@ -85,13 +99,6 @@ main section {
 
 .name {
     font-weight: 600;
-}
-
-.intro-section h2 {
-    font-weight: 200;
-    line-height: 1.5em;
-    font-size: 2.75em;
-    padding: 50px 0;
 }
 
 .email-link {
@@ -116,7 +123,16 @@ main section {
     justify-content: space-between;
     align-items: center;
     align-content: center;
+    flex-wrap: wrap;
     max-width: 90em;
+}
+/* Create space to prevent anchor tag headbutting */
+.about-section::before {
+    display: block; 
+    content: " "; 
+    width: 100%;
+    visibility: hidden;
+    pointer-events: none;
 }
 
 .about-image {
@@ -136,16 +152,8 @@ main section {
     border-radius: 10px;
 }
 
-.about-text h2 {
-    color: #880e17;
-    font-weight: 400;
-    font-size: 2.5em;
-    line-height: 2;
-    display: flex;
-    align-items: center;
-}
 
-.about-text h2::after {
+.about-text h3::after {
     content: '';
     flex: 1;
     height: 2px;
@@ -163,6 +171,13 @@ main section {
     -webkit-columns: 2;
     -moz-columns: 2;
     margin: 5px 40px;
+}
+
+.contact-section {
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 footer {
@@ -199,11 +214,15 @@ footer {
 
     .about-section {
         padding: 0;
+        margin: 0 auto;
         flex-direction: column-reverse;
         justify-content: space-between;
-        margin: 0 auto;
         background-color: #F1E3C6;
         border-radius: 10px;
+    }
+
+    .about-section::before {
+        display: none;
     }
 
     .about-image {
