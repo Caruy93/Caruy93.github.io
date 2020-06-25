@@ -1,9 +1,16 @@
 
 /* Social media icon selectors*/
-footer {
+.sm-style-container {
     position: fixed;
-    bottom: 0;
-    left: 40px;
+    height: 100vh;
+    left: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sm-footer-container {
+    display: none;
 }
 
 .social-media-list {
@@ -35,29 +42,116 @@ footer {
 .social-media-list li a:hover {
     color: #4B78D2;
 }
-
-.social-media-list::after {
-    content: "";
+/*
+.arrow {
     display: block;
     width: 2px;
     height: 100px;
-    margin: 0 auto;
+    margin: 0 auto 20px;
     background-color: #888;
-    bottom: 0;
+}
+*/
+
+.arrow {
+    width: 3vmin;
+    height: 3vmin;
+    transform: rotate(-45deg);
 }
 
+.arrow::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    border: solid black;
+    border-width: .2vmin .2vmin 0 0;
+	display: block;
+}
+
+.arrow::after {
+    content: '';
+    float: left;
+    position: relative;
+    top: -100%;
+    width: 100%;
+    height: 100%;
+    border-width: 0 .2vmin 0 0;
+    border-style: solid;
+    border-color: black;
+    transform-origin: 100% 0;
+    transition:.2s ease;
+}
+
+.arrow:hover::after {
+    transform: rotate(45deg);
+    height: 120%;
+}
+/*
+div.arrow {
+	width: 6vmin;
+	height: 6vmin;
+	box-sizing: border-box;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: rotate(-45deg);
+	
+	&::before {
+		content: '';
+		width: 100%;
+		height: 100%;
+		border-width: .8vmin .8vmin 0 0;
+		border-style: solid;
+		border-color: #fafafa;
+		transition: .2s ease; ---
+		display: block;
+		transform-origin: 100% 0; ---
+	}
+
+	
+	&:after {
+		content: '';
+		float: left;
+		position: relative;
+		top: -100%;
+		width: 100%;
+		height: 100%;
+		border-width: 0 .8vmin 0 0;
+		border-style: solid;
+		border-color: #fafafa;
+		transform-origin: 100% 0;
+		transition:.2s ease;
+	}
+	
+	&:hover::after {
+		transform: rotate(45deg);
+		border-color: orange;
+		height: 120%;
+	}
+	&:hover::before {
+		border-color: orange;
+		transform: scale(.8);
+		
+	}
+	
+}
+*/
 @media only screen and (max-width: 43em) {
-    footer {
-        position: absolute;
-        bottom: 0;
+    .sm-style-container {
+        display: none;
+    }
+
+    .sm-footer-container {
+        display: block;
     }
 
     .social-media-list {
         display: inline-block;
+        margin: 10px auto;
     }
 
     .social-media-list li {
         float: left;
+        margin: 0 1em;
     }
 
     .social-media-list::after {
