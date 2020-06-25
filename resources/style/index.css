@@ -61,7 +61,6 @@ main {
 
 main section {
     overflow: hidden;
-    min-height: 100vh;
     margin: 0 auto;
     padding: 150px 0;
 }
@@ -75,9 +74,9 @@ main section {
     justify-content: flex-start;
     align-items: flex-start;
     max-width: 65em;
+    min-height: 100vh
     
 }
-
 h1 {
     font-weight: 200;
     font-size: 3em;
@@ -97,10 +96,11 @@ h1 {
 .email-link {
     cursor: pointer;
     padding: 20px;
+    margin: 10px 0;
     border-radius: 5px;
     text-decoration: none;
     font-weight: 200;
-    font-size: 1.5em;
+    font-size: 1.75em;
     color: #57391e;
     background-color: #F1E3C6;
     transition: 0.25s;
@@ -112,7 +112,6 @@ h1 {
 }
 
 .about-section {
-    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     align-content: center;
@@ -123,6 +122,7 @@ h1 {
     flex: 1;
     margin-right: 2em;
     max-width: 350px;
+    max-height: 350px;
     border-radius: 100%;
 }
 
@@ -187,8 +187,9 @@ h1 {
     .about-text {
         margin-left: 1em;
     }
-
 }
+
+
 
 /* Breakpoint into tablet screen size */
 @media only screen and (max-width: 62em) {
@@ -196,29 +197,27 @@ h1 {
         padding: 0 100px;
     }
 
-    main section{
-        padding: 100px 0;
-    }
     .intro-section {
         font-size: 0.8rem;
     }
 
     .about-section {
-        flex-direction: column-reverse;
-        justify-content: center;
-        margin: 150px auto;
         padding: 0;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        margin: 0 auto;
         background-color: #F1E3C6;
         border-radius: 10px;
     }
 
-    .about-image img {
-        width: 250px;
-        margin: 0;
+    .about-image {
+        margin: 40px auto;
+        flex: 0;
     }
-
     .about-text {
         margin: 0;
+        background-color: transparent;
+        padding: 0 20px;
     }
 }
 
@@ -239,4 +238,5 @@ h1 {
     .about-image {
         width: 200px;
     }
+
 }
