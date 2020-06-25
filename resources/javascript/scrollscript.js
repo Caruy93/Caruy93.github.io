@@ -9,9 +9,9 @@ function spacer(elementHeight) {
 }
 
 // Calculate and insert rules about section spacing
-const aboutRule = `.about-section {margin-top: ${spacer(height)}px}`;
+const aboutRule = `.about-section {margin-top: -${spacer(height)}px}`;
 const aboutBeforeRule = `.about-section::before {height: ${spacer(height)}px}`;
-console.log(document.styleSheets[1]);
+
 document.styleSheets[1].insertRule(aboutRule);
 document.styleSheets[1].insertRule(aboutBeforeRule);
 
