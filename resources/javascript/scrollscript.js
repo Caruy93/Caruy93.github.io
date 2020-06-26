@@ -1,5 +1,3 @@
-console.log(navigator.userAgent);
-
 // Function updates arrow anchor link based on scroll position
 function arrowUpdater() {
     $('section').each(function (index) {
@@ -41,7 +39,8 @@ document.styleSheets[1].insertRule(aboutBeforeRule);
 // Allow smooth scrolling when document is ready
 $(document).ready(function() {
 
-    if (navigator.userAgent === 'safari') {
+    if (document.querySelector('main').style.scrollBehavior === undefined) {
+        console.log('noscroll');
         // Add smooth scrolling to all links
         $("a").on('click', function(event) {
 
