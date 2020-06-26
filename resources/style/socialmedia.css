@@ -60,13 +60,11 @@
 
 .arrow-container:hover > .arrow::before {
     transform: scale(1.5);
-    border-color: #4774d2;
 }
 .arrow-container:hover > .arrow::after {
     height: 15vmin;
     transform: scale(2);
     transform: rotate(45deg);
-    border-color: #4774d2;
 }
 
 /* Arrow elements */
