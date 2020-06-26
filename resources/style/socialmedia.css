@@ -115,17 +115,12 @@
     }
 
     .social-media-list {
-        display: inline-block;
         margin: 10px auto;
     }
 
     .social-media-list li {
         float: left;
+        font-size: 4vmin;
         margin: 0 1em;
     }
-
-    .social-media-list::after {
-        display: none;
-    }
-
 }
