@@ -1,30 +1,24 @@
+console.log(navigator.userAgent);
 
-$(document).scroll(function () {
-    $('section').each(function () {
+// Function updates arrow anchor link based on scroll position
+function arrowUpdater() {
+    $('section').each(function (index) {
+        // Condition checks that the element is in view
         if($(this).position().top <= $(document).scrollTop() && ($(this).position().top + $(this).outerHeight()) > $(document).scrollTop()) {
-            console.log($(this).attr('id'));
+
+            const prevIndex = Math.max(0, index - 1);
+            const nextIndex = Math.min(index + 1, $('section').get().length - 1);
+
+            // Assign new index to arrows
+            $('#up-arrow').attr('href','#' + $('section').eq(prevIndex).attr('id'));
+            $('#down-arrow').attr('href','#' + $('section').eq(nextIndex).attr('id'));
+
         }
     });
-});
-function getNext() {
-    var elmt = document.getElementById("About");
-    elmt.scrollIntoView();
 }
-/*
-let sectionsObjectArray = [
-    {sectionId: 1, sectionName: "#Introduction"},
-    {sectionId: 2, sectionName: "#About"},
-    {sectionId: 3, sectionName: "#Contact"}
-];
 
-let currentSection = 0;
-
-function getNext() {
-    currentSection++;
-    console.log(sectionsObjectArray[currentSection].sectionName);
-    return sectionsObjectArray[currentSection].sectionName;
-}
-*/
+$(document).ready(arrowUpdater);
+$(document).scroll(arrowUpdater);
 
 /*-------------------------*/
 // Capture element height of ID: About
