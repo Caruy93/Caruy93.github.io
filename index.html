@@ -16,11 +16,9 @@
         <nav>
             <ol class='horizontal-list'>
                 <li><a href="#About">about</a></li>
-                <!--
-                <li>work</li>
-                -->
+         
                 <li><a href="#Contact">contact</a></li>
-                
+                <li><a href="resources/resume/web_dev_resume.pdf" target="_blank" class="link-button resume">resume</a></li>
             </ol>
         </nav>
     </header>
@@ -31,7 +29,7 @@
             </h1>
             <!-- Script enters a weather update into the text -->
             <h2 id='self-intro-body'></h2>
-            <a href="mailto:caruychen@gmail.com" class="email-link">Get in touch</a>
+            <a href="mailto:caruychen@gmail.com" class="link-button get-in-touch">Get in touch</a>
         </section>
         <section class='flex-container about-section' id="About">
             <img class="about-image" src="resources/images/caruy_large.jpg" alt="Caruy">
@@ -59,8 +57,8 @@
         </section>
         <section class="flex-container contact-section" id="Contact">
             <h3>Want to get in touch?</h3>
-            <p>I am always happy to talk about any exciting opportunities! You can contact me at: caruychen@gmail.com</p>
-
+            <p>I am always happy to talk about new and exciting opportunities! You can contact me at:</p>
+            <p onclick="copyText()" id="copy-email">caruychen@gmail.com</p>
         </section>
         <div class="sm-style-container">
             <!--Neet to fix arrow-->
@@ -128,5 +126,6 @@
     <script src="resources/javascript/openweather.js"></script>
     <script src="resources/javascript/helper.js"></script>
     <script src="resources/javascript/scrollscript.js"></script>
+    <script src="resources/javascript/clickevent.js"></script>
 </body>
 </html>

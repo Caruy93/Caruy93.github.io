@@ -22,7 +22,7 @@ body {
 header {
     position: absolute;
     top: 30px;
-    right: 10px;
+    right: 30px;
     padding: 10px 20px;
     text-align: center;
     z-index: 1;
@@ -72,6 +72,10 @@ a:hover {
     color: #4774d2;
 }
 
+.flex-container {
+    display: flex;
+}
+
 ol.horizontal-list {
     list-style-type: none;
     right: 150px;
@@ -82,10 +86,6 @@ ol.horizontal-list li {
     width: 50px;
     margin: 0px 30px;
     color: #4774d2;
-}
-
-.flex-container {
-    display: flex;
 }
 
 .intro-section{
@@ -101,22 +101,29 @@ ol.horizontal-list li {
     font-weight: 600;
 }
 
-.email-link {
+.link-button {
     cursor: pointer;
-    padding: 20px;
-    margin: 10px 0;
-    border-radius: 5px;
+    border-radius: 8px;
     text-decoration: none;
-    font-weight: 200;
-    font-size: 1.75em;
     color: #57391e;
     background-color: #F1E3C6;
     transition: 0.25s;
 }
 
-.email-link:hover {
+.link-button:hover {
     color: #fbf7ef;
     background-color: #9DB5E7;
+}
+
+.get-in-touch {
+    padding: 20px;
+    margin: 10px 0;
+    font-size: 1.75em;
+    font-weight: 200;
+}
+
+.resume {
+    padding: 15px;
 }
 
 .about-section {
@@ -179,6 +186,7 @@ ol.horizontal-list li {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 footer {
@@ -187,6 +195,21 @@ footer {
     align-items: center;
     padding: 30px 0;
 }
+
+/* Specific selectors */
+#copy-email {
+    font-weight: 600;
+    margin: 5px auto;
+    padding: 2vmin;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+#copy-email:hover {
+    box-shadow: 1px 2px 5px  #aaa;
+}
+
 
 /* Breakpoint into standard screen size */
 @media only screen and (max-width: 100em) {

@@ -67,6 +67,16 @@
     transform: rotate(45deg);
 }
 
+.arrow-container:active > .arrow::before{
+    transform: scale(1);
+}
+
+.arrow-container:active > .arrow::after{
+    height: 12vmin;
+}
+
+
+
 /* Arrow elements */
 .arrow {
     width: 3.2vmin;

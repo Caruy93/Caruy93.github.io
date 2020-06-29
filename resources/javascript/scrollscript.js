@@ -9,7 +9,7 @@ function arrowUpdater() {
         let sectionHeight = $(this).outerHeight();
         const scrollPosition = $(document).scrollTop();
 
-        sectionHeight = (index === 0) ? sectionHeight -= sectionViewGap: sectionHeight;
+        sectionHeight = (index === 0) ? sectionHeight - sectionViewGap: sectionHeight;
 
         if (index === 1) {
             sectionTop -= sectionViewGap;
