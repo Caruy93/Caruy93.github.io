@@ -62,7 +62,7 @@
     transform: scale(1.5);
 }
 .arrow-container:hover > .arrow::after {
-    height: 15vmin;
+    height: 16vmin;
     transform: scale(2);
     transform: rotate(45deg);
 }
