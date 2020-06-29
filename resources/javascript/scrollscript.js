@@ -1,13 +1,27 @@
-// Function updates arrow anchor link based on scroll position
+const sectionViewGap = (($(window).height() || 0) - $('#About').height()) / 2;
+
+// Update arrow anchor link based on scroll position
 function arrowUpdater() {
     $('section').each(function (index) {
-        // Condition checks that the element is in view
-        if($(this).position().top <= $(document).scrollTop() && ($(this).position().top + $(this).outerHeight()) > $(document).scrollTop()) {
+
+        // Assign height and position variables
+        let sectionTop = $(this).position().top;
+        let sectionHeight = $(this).outerHeight();
+        const scrollPosition = $(document).scrollTop();
+
+        sectionHeight = (index === 0) ? sectionHeight -= sectionViewGap: sectionHeight;
+
+        if (index === 1) {
+            sectionTop -= sectionViewGap;
+            sectionHeight += sectionViewGap;
+        }
+
+        // Condition checks that the element is in view, and assigns new index to arrows
+        if(sectionTop <= scrollPosition && (sectionTop + sectionHeight) > scrollPosition) {
 
             const prevIndex = Math.max(0, index - 1);
             const nextIndex = Math.min(index + 1, $('section').get().length - 1);
 
-            // Assign new index to arrows
             $('#up-arrow').attr('href','#' + $('section').eq(prevIndex).attr('id'));
             $('#down-arrow').attr('href','#' + $('section').eq(nextIndex).attr('id'));
 
@@ -15,32 +29,10 @@ function arrowUpdater() {
     });
 }
 
-$(document).ready(arrowUpdater);
-$(document).scroll(arrowUpdater);
-
-/*-------------------------*/
-// Capture element height of ID: About
-let divElement = document.getElementById('About');
-let strHeight = document.defaultView.getComputedStyle(divElement).height;
-let height = parseInt(strHeight);
-var vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-function spacer(elementHeight) {
-    return (vh - elementHeight) / 2;
-}
-
-// Calculate and insert rules about section spacing
-const aboutRule = `.about-section {margin-top: -${spacer(height)}px}`;
-const aboutBeforeRule = `.about-section::before {height: ${spacer(height)}px}`;
-
-document.styleSheets[1].insertRule(aboutRule);
-document.styleSheets[1].insertRule(aboutBeforeRule);
-
-/*-------------------------*/
-// Allow smooth scrolling when document is ready
-$(document).ready(function() {
-
+// Detect smooth scrolling and add feature where absent
+function smoothScroller() {
     if (document.querySelector('main').style.scrollBehavior === undefined) {
-        console.log('noscroll');
+
         // Add smooth scrolling to all links
         $("a").on('click', function(event) {
 
@@ -65,4 +57,23 @@ $(document).ready(function() {
             } // End of if
         });
     }
-});
+}
+
+// Calculate the viewport gap when scrolling to about section
+function calcSectionViewGap() {
+    
+    const aboutRule = `.about-section {margin-top: -${sectionViewGap}px}`;
+    const aboutBeforeRule = `.about-section::before {height: ${sectionViewGap}px}`;
+    
+    document.styleSheets[1].insertRule(aboutRule);
+    document.styleSheets[1].insertRule(aboutBeforeRule);
+
+}
+
+// initiate arrow, smooth scroll and about section view gap
+$(document).ready(arrowUpdater);
+$(document).ready(smoothScroller);
+$(document).ready(calcSectionViewGap);
+
+// Trigger arrow link update and section view gap with respective events
+$(document).scroll(arrowUpdater);
