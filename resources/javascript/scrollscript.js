@@ -70,6 +70,26 @@ function calcSectionViewGap() {
 
 }
 
+// Hide navbar when scrolling down, show navbar when scrolling up */
+let prevScrollpos = $(document).scrollTop();
+function navBarShift() {
+    let currentScrollPos = $(document).scrollTop()
+
+    const topStyle = {top: 0, height: '100px'};
+    const scrollStyle = {top: '-70px', height: '70px'};
+    if (currentScrollPos <= 0) {
+        $("header").css(topStyle);
+
+    } else {
+        prevScrollpos > currentScrollPos ?  
+            $("header").css('top', 0): 
+            $("header").css(scrollStyle);
+    }
+
+    prevScrollpos = currentScrollPos;
+}
+
+$(document).scroll(navBarShift);
 // initiate arrow, smooth scroll and about section view gap
 $(document).ready(arrowUpdater);
 $(document).ready(smoothScroller);
