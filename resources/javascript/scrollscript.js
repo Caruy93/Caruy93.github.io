@@ -35,7 +35,7 @@ function smoothScroller() {
     if (document.querySelector('main').style.scrollBehavior === undefined) {
 
         // Add smooth scrolling to all links
-        $("nav li a").on('click', function(event) {
+        $(".smooth-scroller").on('click', function(event) {
             
             // Make sure this.hash has a value before overriding default behavior
             if (this.hash !== "") {
@@ -103,9 +103,7 @@ function navBarShift() {
         if($('input[type="checkbox"]').is(":not(:checked)")){
             stylingOnScroll();
         }
-        $('.nav-mobile-container ul').css(
-            'margin-top',
-            -67 + ((100 - $("header").height())/2));
+
     }
 }
 

@@ -369,7 +369,7 @@ footer {
     .nav-mobile-container ul {
         position: fixed;
         right: 0;
-        margin-top: -67px;
+        top: 0px;
         padding: 80px 0;
         width: 75vw;
         height: 100vh;
@@ -392,14 +392,10 @@ footer {
     }
 
     .nav-mobile-container .resume {
-        color: black;
+        color: #57391e;
     }
     
     .nav-mobile-container input:checked ~ ul{
       transform: none;
-    }
-
-    .nav-mobile-container input:checked ~ .nav-mobile-container {
-        background-color: black;
     }
 }
