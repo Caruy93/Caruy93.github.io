@@ -31,11 +31,12 @@ function arrowUpdater() {
 
 // Detect smooth scrolling and add feature where absent
 function smoothScroller() {
+
     if (document.querySelector('main').style.scrollBehavior === undefined) {
 
         // Add smooth scrolling to all links
-        $("a").on('click', function(event) {
-
+        $("nav li a").on('click', function(event) {
+            
             // Make sure this.hash has a value before overriding default behavior
             if (this.hash !== "") {
                 
@@ -72,16 +73,16 @@ function calcSectionViewGap() {
 
 // Hide navbar when scrolling down, show navbar when scrolling up */
 let prevScrollpos = $(document).scrollTop();
+// Set rules to apply on each condition (top of the page, scrolling up, scrolling down)
+const topStyle = {top: 0, height: '100px', 'box-shadow': 'none'};
+const scrollUpStyle = {top: 0, height: '70px', 'box-shadow':  '0px 5px 30px -5px #c0b7a7'}
+const scrollDownStyle = {top: '-70px', height: '70px', 'box-shadow': 'none'};
+
 function navBarShift() {
     let currentScrollPos = $(this).scrollTop()
 
-    // Set rules to apply on each condition (top of the page, scrolling up, scrolling down)
-    const topStyle = {top: 0, height: '100px', 'box-shadow': 'none'};
-    const scrollUpStyle = {top: 0, height: '70px', 'box-shadow':  '0px 5px 30px -5px #c0b7a7'}
-    const scrollDownStyle = {top: '-70px', height: '70px', 'box-shadow': 'none'};
-   
     // Arrow function for how css rules are set
-    const scrollCondition = () => {
+    const stylingOnScroll = () => {
         if (currentScrollPos <= 0) {
             $("header").css(topStyle);
     
@@ -90,23 +91,22 @@ function navBarShift() {
                 $("header").css(scrollUpStyle): 
                 $("header").css(scrollDownStyle);
         }
+        // Reset previous scroll position
+        prevScrollpos = currentScrollPos;
     }
  
     // Apply arrow function depending on screen width
     if ($(this).width() > 688) {
-        scrollCondition();
+        stylingOnScroll();
     } 
     else {
         if($('input[type="checkbox"]').is(":not(:checked)")){
-            scrollCondition();
+            stylingOnScroll();
         }
         $('.nav-mobile-container ul').css(
             'margin-top',
             -67 + ((100 - $("header").height())/2));
     }
-
-    // Reset previous scroll position
-    prevScrollpos = currentScrollPos;
 }
 
 

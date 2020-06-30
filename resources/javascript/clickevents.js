@@ -16,5 +16,6 @@ function copyText() {
 
 /* Trigger navbar button click when clicking on nav link */
 $('.nav-mobile-container ul li a').click(function(){
+    // Trigger mobile navbar toggle
     $('input[type="checkbox"]').trigger("click");
 });
