@@ -13,3 +13,8 @@ function copyText() {
     document.body.removeChild(temp);
     alert("Copied: "+textToCopy);
 }
+
+/* Trigger navbar button click when clicking on nav link */
+$('.nav-mobile-container ul li a').click(function(){
+    $('input[type="checkbox"]').trigger("click");
+});

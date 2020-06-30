@@ -30,8 +30,8 @@ header {
     align-items: center;
     z-index: 1;
     transition: 0.3s ease;
+    
 }
-
 
 main {
     display: flex;
@@ -283,14 +283,6 @@ footer {
         padding: 25px 0;
     }
 
-    .horizontal-list {
-        display: none;
-    }
-
-    header {
-        padding: 5px 5px;
-    }
-
     .about-image {
         width: 200px;
     }
@@ -298,13 +290,19 @@ footer {
     .contact-section {
         text-align: center;
     }
+
+    header {
+        padding: 0 10vw;
+    }
+    
+    .horizontal-list {
+        display: none;
+    }
     
     /* Nav icon hamburger for mobile*/
-
     .nav-mobile-container {
         display: block;
-        position: fixed;
-        right: 35px;
+        position: relative;
         z-index: 1;
         -webkit-user-select: none;
         user-select: none;
@@ -312,13 +310,12 @@ footer {
 
     .nav-mobile-container input {
         display: block;
+        position: absolute;
+        cursor: pointer;
         width: 40px;
         height: 32px;
-        position: absolute;
         top: -7px;
         left: -5px;
-    
-        cursor: pointer;
     
         opacity: 0; /* hide this */
         z-index: 2; /* and place it over the hamburger */
@@ -376,6 +373,7 @@ footer {
         width: 75vw;
         height: 100vh;
         list-style-type: none;
+        text-align: center;
         background-color: #57391e;
          
         transform-origin: 0% 0%;
@@ -400,4 +398,7 @@ footer {
       transform: none;
     }
 
+    .nav-mobile-container input:checked ~ .nav-mobile-container {
+        background-color: black;
+    }
 }

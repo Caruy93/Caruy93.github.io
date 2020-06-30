@@ -73,27 +73,47 @@ function calcSectionViewGap() {
 // Hide navbar when scrolling down, show navbar when scrolling up */
 let prevScrollpos = $(document).scrollTop();
 function navBarShift() {
-    let currentScrollPos = $(document).scrollTop()
+    let currentScrollPos = $(this).scrollTop()
 
-    const topStyle = {top: 0, height: '100px'};
-    const scrollStyle = {top: '-70px', height: '70px'};
-    if (currentScrollPos <= 0) {
-        $("header").css(topStyle);
-
-    } else {
-        prevScrollpos > currentScrollPos ?  
-            $("header").css('top', 0): 
-            $("header").css(scrollStyle);
+    // Set rules to apply on each condition (top of the page, scrolling up, scrolling down)
+    const topStyle = {top: 0, height: '100px', 'box-shadow': 'none'};
+    const scrollUpStyle = {top: 0, height: '70px', 'box-shadow':  '0px 5px 30px -5px #c0b7a7'}
+    const scrollDownStyle = {top: '-70px', height: '70px', 'box-shadow': 'none'};
+   
+    // Arrow function for how css rules are set
+    const scrollCondition = () => {
+        if (currentScrollPos <= 0) {
+            $("header").css(topStyle);
+    
+        } else {
+            prevScrollpos > currentScrollPos ?  
+                $("header").css(scrollUpStyle): 
+                $("header").css(scrollDownStyle);
+        }
+    }
+ 
+    // Apply arrow function depending on screen width
+    if ($(this).width() > 688) {
+        scrollCondition();
+    } 
+    else {
+        if($('input[type="checkbox"]').is(":not(:checked)")){
+            scrollCondition();
+        }
+        $('.nav-mobile-container ul').css(
+            'margin-top',
+            -67 + ((100 - $("header").height())/2));
     }
 
+    // Reset previous scroll position
     prevScrollpos = currentScrollPos;
 }
 
-$(document).scroll(navBarShift);
-// initiate arrow, smooth scroll and about section view gap
+
 $(document).ready(arrowUpdater);
 $(document).ready(smoothScroller);
 $(document).ready(calcSectionViewGap);
 
-// Trigger arrow link update and section view gap with respective events
 $(document).scroll(arrowUpdater);
+$(document).scroll(navBarShift);
+
