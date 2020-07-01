@@ -1,4 +1,4 @@
-const sectionViewGap = (($(window).height() || 0) - $('#About').height()) / 2;
+const sectionViewGap = Math.max(0, (($(window).height() || 0) - $('#About').height()) / 2);
 
 // Update arrow anchor link based on scroll position
 function arrowUpdater() {
@@ -9,13 +9,23 @@ function arrowUpdater() {
         let sectionHeight = $(this).outerHeight();
         const scrollPosition = $(document).scrollTop();
 
+        // Adjust intro section height
         sectionHeight = (index === 0) ? sectionHeight - sectionViewGap: sectionHeight;
 
+        if (index === 0) {
+            console.log('Intro height: '+ sectionHeight);
+        }
+        // Adjust about section position and height
         if (index === 1) {
             sectionTop -= sectionViewGap;
             sectionHeight += sectionViewGap;
+            console.log('About Top '+sectionTop);
+            console.log('About height '+sectionHeight);
+            console.log('Current position '+ scrollPosition);
+            console.log('Gap is '+ sectionViewGap);
         }
 
+        
         // Condition checks that the element is in view, and assigns new index to arrows
         if(sectionTop <= scrollPosition && (sectionTop + sectionHeight) > scrollPosition) {
 
