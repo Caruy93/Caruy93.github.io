@@ -12,17 +12,10 @@ function arrowUpdater() {
         // Adjust intro section height
         sectionHeight = (index === 0) ? sectionHeight - sectionViewGap: sectionHeight;
 
-        if (index === 0) {
-            console.log('Intro height: '+ sectionHeight);
-        }
         // Adjust about section position and height
         if (index === 1) {
             sectionTop -= sectionViewGap;
             sectionHeight += sectionViewGap;
-            console.log('About Top '+sectionTop);
-            console.log('About height '+sectionHeight);
-            console.log('Current position '+ parseFloat(scrollPosition));
-            console.log('Gap is '+ sectionViewGap);
         }
 
         
