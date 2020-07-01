@@ -1,4 +1,4 @@
-const sectionViewGap = Math.max(0, (($(window).height() || 0) - $('#About').height()) / 2);
+const sectionViewGap = Math.round(Math.max(0, (($(window).height() || 0) - $('#About').height()) / 2));
 
 // Update arrow anchor link based on scroll position
 function arrowUpdater() {
@@ -21,7 +21,7 @@ function arrowUpdater() {
             sectionHeight += sectionViewGap;
             console.log('About Top '+sectionTop);
             console.log('About height '+sectionHeight);
-            console.log('Current position '+ scrollPosition);
+            console.log('Current position '+ parseFloat(scrollPosition));
             console.log('Gap is '+ sectionViewGap);
         }
 
