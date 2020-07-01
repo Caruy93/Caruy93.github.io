@@ -389,10 +389,12 @@ footer {
 
     .nav-mobile-container a {
         color: #fbf7ef;
+        font-size: 1.2em;
     }
 
     .nav-mobile-container .resume {
         color: #57391e;
+        
     }
     
     .nav-mobile-container input:checked ~ ul{
