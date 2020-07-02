@@ -75,7 +75,9 @@
     height: 12vmin;
 }
 
-
+.arrow-container p {
+    display: none;
+}
 
 /* Arrow elements */
 .arrow {
