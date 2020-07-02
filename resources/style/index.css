@@ -67,6 +67,7 @@ h3 {
     display: flex;
     align-items: center;
 }
+
 a {
     text-decoration: none;
     color: #57391e;
@@ -76,6 +77,10 @@ a {
 
 a:hover {
     color: #4774d2;
+}
+
+label {
+    display: none;
 }
 
 .flex-container {
