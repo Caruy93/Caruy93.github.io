@@ -62,10 +62,16 @@ h2 {
 h3 {
     color: #880e17;
     font-weight: 400;
-    font-size: 3em;
+    font-size: 2.75em;
     line-height: 2;
     display: flex;
     align-items: center;
+}
+
+h4 {
+    font-weight: 400;
+    font-size: 1.5em;
+    line-height: 2;
 }
 
 a {
@@ -156,7 +162,6 @@ label {
     pointer-events: none;
 }
 
-
 .about-image {
     flex: 1;
     margin-right: 2em;
@@ -192,6 +197,44 @@ label {
     -webkit-columns: 2;
     -moz-columns: 2;
     margin: 5px 40px;
+}
+
+.projects-section {
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.projects-section h3 {
+    margin: 10px 0;
+}
+
+.projects-section h3::before {
+    content: '';
+    height: 2px;
+    width: 20vw;
+    margin: auto 20px;
+    background-color: #aaa;
+}
+
+.projects-section h3::after {
+    content: '';
+    height: 2px;
+    width: 20vw;
+    margin: auto 20px;
+    background-color: #aaa;
+}
+
+.feature-project div{
+    display: inline;
+    float: left;
+}
+
+.feature-project div p{
+    width: 30em;
+    margin: 20px 0;
 }
 
 .contact-section {
