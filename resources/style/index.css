@@ -200,7 +200,6 @@ label {
 }
 
 .projects-section {
-    height: 100vh;
     width: 100%;
     flex-direction: column;
     justify-content: center;
@@ -209,32 +208,32 @@ label {
 
 .projects-section h3 {
     margin: 20px 0;
+    width: 100%
 }
 
-.projects-section h3::before {
+.projects-section h3::before, .projects-section h3::after {
     content: '';
     height: 2px;
-    width: 25vw;
     margin: auto 20px;
     background-color: #aaa;
-}
-
-.projects-section h3::after {
-    content: '';
-    height: 2px;
-    width: 20vw;
-    margin: auto 20px;
-    background-color: #aaa;
+    flex: 1 1 0
 }
 
 .feature-project {
     margin: 20px auto;
+    width: 700px;
     display: flex;
     align-items: center;
+    justify-content: center;
+}
+
+.reverse {
+    flex-direction: row-reverse;
 }
 
 .project-description {
-    margin-right: -3em;
+    /* margin-right: -3em; */
+    overflow: visible;
     z-index: 1;
 }
 
